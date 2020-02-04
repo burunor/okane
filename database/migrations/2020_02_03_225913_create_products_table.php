@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->text('description')->nullable();
+            $table->string('barcode')->nullable();
             $table->integer('quantity')->nullable();
             $table->float('cost_price')->nullable();
             $table->float('sell_price')->nullable();
