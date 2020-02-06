@@ -20,8 +20,8 @@ Route::get('/products/create', 'ProductsController@create')->name('product.creat
 Route::get('/products/{id}', 'ProductsController@show')->name('product.show');
 Route::get('/products/{id}/edit', 'ProductsController@edit')->name('product.edit');
 Route::post('/products', 'ProductsController@store');
-Route::patch('/products/{product}', 'ProductsController@update')->name('product.update');
-Route::delete('/products/{product}', 'ProductsController@destroy')->name('product.destroy');
+Route::patch('/products/{id}', 'ProductsController@update')->name('product.update');
+Route::delete('/products/{id}', 'ProductsController@destroy')->name('product.destroy');
 
 Auth::routes();
 

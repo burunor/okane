@@ -19,8 +19,8 @@ class CreateProductsTable extends Migration
             $table->text('description')->nullable();
             $table->string('barcode')->nullable();
             $table->integer('quantity')->nullable();
-            $table->float('cost_price')->nullable();
-            $table->float('sell_price')->nullable();
+            $table->decimal('cost-price', 15,2)->nullable();
+            $table->decimal('sell-price', 15,2)->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });
