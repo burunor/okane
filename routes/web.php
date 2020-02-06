@@ -19,7 +19,7 @@ Route::get('/products', 'ProductsController@index')->name('product.index');
 Route::get('/products/create', 'ProductsController@create')->name('product.create');
 Route::get('/products/{id}', 'ProductsController@show')->name('product.show');
 Route::get('/products/{id}/edit', 'ProductsController@edit')->name('product.edit');
-Route::post('/products', 'ProductsController@store');
+Route::post('/products', 'ProductsController@store')->name('product.store');
 Route::patch('/products/{id}', 'ProductsController@update')->name('product.update');
 Route::delete('/products/{id}', 'ProductsController@destroy')->name('product.destroy');
 

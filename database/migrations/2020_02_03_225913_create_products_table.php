@@ -17,10 +17,10 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->text('description')->nullable();
-            $table->string('barcode')->nullable();
+            $table->unsignedBigInteger('barcode')->nullable();
             $table->integer('quantity')->nullable();
-            $table->decimal('cost-price', 15,2)->nullable();
-            $table->decimal('sell-price', 15,2)->nullable();
+            $table->decimal('cost_price', 15,2)->nullable();
+            $table->decimal('sell_price', 15,2)->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });

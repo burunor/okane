@@ -40,10 +40,10 @@ class ProductsController extends Controller
         $data = $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'barcode' => 'required | numeric',
+            'barcode' => 'required | digits_between:1,10',
             'quantity' => 'required | numeric',
-            'cost-price' => 'required | between:0,99.99',
-            'sell-price' => 'required | between:0,99.99',
+            'cost_price' => 'required | between:0,99.99',
+            'sell_price' => 'required | between:0,99.99',
             'image' => 'image',
         ]);
 
