@@ -69,20 +69,21 @@ class ProductsController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        return view('products.show');
+        $product = Product::findOrFail($id);
+        return view('products.show', compact('product'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
+     *
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        return view('products.edit');
+        $product = Product::findOrFail($id);
+        return view('products.edit', compact('product'));
     }
 
     /**
@@ -92,19 +93,49 @@ class ProductsController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update($id, Request $request)
     {
-        //
+        $data = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'barcode' => 'required | digits_between:1,10',
+            'quantity' => 'required | numeric',
+            'cost_price' => 'required | between:0,99.99',
+            'sell_price' => 'required | between:0,99.99',
+            'image' => 'image',
+        ]);
+
+
+        if ( $request->hasFile('image') )
+        {
+            $imagePath = $request->file('image')->store('products', 'public');
+            $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
+            $image->save();
+
+            $imageArray = ['image' => $imagePath];
+        }
+        $data = array_merge($data , $imageArray ?? []);
+
+        $product = Product::findOrFail($id);
+
+        $product->update($data);
+//        dd($product);
+
+        return redirect()->route('product.show', ['id' => $product->id]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Product  $product
+     * @param  4id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        $product = Product::findOrFail($id);
+//        return view('products.destroy', compact('product'));
+
+        $product->delete();
+        return redirect()->route('product.index');
     }
 }

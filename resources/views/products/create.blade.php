@@ -93,7 +93,14 @@
                     </div>
 
                     <div class="row">
-                        <button class="btn btn-primary">Create</button>
+                        <div class="col-3 offset-9 d-flex">
+                            <div class="pr-2">
+                                <a href="{{ route('product.index') }}" class="btn btn-outline-secondary">Cancel</a>
+                            </div>
+                            <div class="">
+                                <button class="btn btn-primary">Create</button>
+                            </div>
+                        </div>
                     </div>
                 </div> <!-- End Col-->
             </div> <!-- End Row-->
