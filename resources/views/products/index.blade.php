@@ -3,10 +3,10 @@
 @section('content')
     <div class="container">
         <div class="row align-content-between align-items-center">
-            <div class="col-9">
+            <div class="col-10">
                 <h1>Products - Index</h1>
             </div>
-            <div class="col-2 offset-1">
+            <div class="col-2">
                 <a href="{{ route('product.create')  }}" class="btn btn-primary">Add Product</a>
             </div>
         </div>

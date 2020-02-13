@@ -5,7 +5,7 @@
         <form action="{{ route('product.store') }}" enctype="multipart/form-data" method="post">
             @csrf
             <div class="row">
-                <div class="col-8 offset-2">
+                <div class="col-10">
                     <div class="row">
                         <h1>Products - Create</h1>
                     </div>

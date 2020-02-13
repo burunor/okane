@@ -71,10 +71,26 @@
                 </div>
             </div>
         </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><a href="{{ route('home') }}" class="nav-link active">Home</a></li>
+                            <li class="nav-item"><a href="{{ route('product.index') }}" class="nav-link">Products</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Customers</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Reports</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Settings</a></li>
+                        </ul>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+                    </div>
+
+                </nav>
+                <main class="py-4 col-md-9 ml-sm-auto col-lg-10">
+                    @yield('content')
+                </main>
+            </div>
+        </div>
     </div>
 </body>
 </html>

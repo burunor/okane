@@ -6,7 +6,7 @@
             @csrf
             @method('PATCH')
             <div class="row">
-                <div class="col-8 offset-2">
+                <div class="col-10">
                     <div class="row">
                         <h1>Product - Edit</h1>
                     </div>
