@@ -10,7 +10,7 @@ class Product extends Model
 
     public function profileImage()
     {
-        $imagePath = ($this->image) ? $this->image : 'products/not-available.png' ;
+        $imagePath = ($this->image) ? $this->image : 'products/No_image_available.png' ;
         return '/storage/' . $imagePath;
     }
 }

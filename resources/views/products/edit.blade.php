@@ -102,7 +102,7 @@
                                 <a href="{{ route('product.show', ['id' => $product->id]) }}" class="btn btn-outline-secondary">Cancel</a>
                             </div>
                             <div class="">
-                                <button class="btn btn-primary" type="button">Update</button>
+                                <button class="btn btn-primary" type="submit">Update</button>
                             </div>
                         </div>
                     </div>

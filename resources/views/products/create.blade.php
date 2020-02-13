@@ -98,7 +98,7 @@
                                 <a href="{{ route('product.index') }}" class="btn btn-outline-secondary">Cancel</a>
                             </div>
                             <div class="">
-                                <button class="btn btn-primary">Create</button>
+                                <button class="btn btn-primary" type="submit">Create</button>
                             </div>
                         </div>
                     </div>
