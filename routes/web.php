@@ -23,6 +23,14 @@ Route::post('/products', 'ProductsController@store')->name('product.store');
 Route::patch('/products/{id}', 'ProductsController@update')->name('product.update');
 Route::delete('/products/{id}', 'ProductsController@destroy')->name('product.destroy');
 
+
+Route::get('/customers', 'CustomersController@index')->name('customer.index');
+Route::get('/customers/create', 'CustomersController@create')->name('customer.create');
+Route::get('/customers/{id}/edit', 'CustomersController@edit')->name('customer.edit');
+Route::post('/customers', 'CustomersController@store')->name('customer.store');
+Route::patch('/customers/{id}', 'CustomersController@update')->name('customer.update');
+Route::delete('/customers/{id}', 'CustomersController@destroy')->name('customer.destroy');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

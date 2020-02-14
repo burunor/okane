@@ -76,15 +76,13 @@
                 <nav class="col-md-2 d-none d-md-block bg-light sidebar">
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">
-                            <li class="nav-item"><a href="{{ route('home') }}" class="nav-link active">Home</a></li>
-                            <li class="nav-item"><a href="{{ route('product.index') }}" class="nav-link">Products</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Customers</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Reports</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Settings</a></li>
+                            <li class="nav-item"><a href="{{ route('home') }}" class="nav-link {{ Request::segment(1) === 'home'? 'active': '' }}">Home</a></li>
+                            <li class="nav-item"><a href="{{ route('product.index') }}" class="nav-link {{ Request::segment(1) === 'products'? 'active': '' }}">Products</a></li>
+                            <li class="nav-item"><a href="{{ route('customer.index') }}" class="nav-link {{ Request::segment(1) === 'customers'? 'active': '' }}">Customers</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link {{ Request::segment(1) === 'reports'? 'active': '' }}">Reports</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link {{ Request::segment(1) === 'settings'? 'active': '' }}">Settings</a></li>
                         </ul>
-
                     </div>
-
                 </nav>
                 <main class="py-4 col-md-9 ml-sm-auto col-lg-10">
                     @yield('content')
