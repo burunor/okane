@@ -15,7 +15,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::orderBy('created_at', 'DESC')->get();
         return view('products.index', compact('products'));
     }
 
@@ -133,8 +133,6 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         $product = Product::findOrFail($id);
-//        return view('products.destroy', compact('product'));
-
         $product->delete();
         return redirect()->route('product.index');
     }
